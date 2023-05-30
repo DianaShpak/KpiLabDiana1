@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - "master"
+      - "main"
 
 env:
   DOCKERHUB_USERNAME: aurora0
