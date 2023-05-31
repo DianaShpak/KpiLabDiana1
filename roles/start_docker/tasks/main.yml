@@ -1,5 +1,5 @@
 ---
-- name: Start container
+- name: Start container nginx
   docker_container:
     name: nginx
     image: aurora0/kpilab
@@ -7,3 +7,11 @@
     command: ["nginx"]
     ports:
       - "80:80"
+
+- name: Start container watchtower
+  docker_container:
+    name: watchtower
+    image: containrrr/watchtower
+    privileged: yes
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
